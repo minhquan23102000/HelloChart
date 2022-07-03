@@ -1,18 +1,12 @@
 FROM python:3.9.5-slim
 
-  #Environment variable
-  ENV APP_HOME /app
-  ENV APP_PORT 5000
-
   #Create workdir
-  WORKDIR $APP_HOME
+  WORKDIR /app
   COPY . ./
 
   #Install librareies
-  RUN pip install --upgrade pip && pip install  -r requirements.txt \
+  RUN pip install --upgrade pip && pip install  --no-cache-dir -r requirements.txt \
     && rm -rf requirements.txt
 
-
   #Run app
-  EXPOSE $APP_PORT
-  CMD ["streamlit", "run", "app.py", "--server.port", "${APP_PORT}"]
+  CMD ["streamlit", "run", "app.py"]
