@@ -3,4 +3,3 @@ streamlit-option-menu
 openpyxl
 plotly
 statsmodels
-glob
