@@ -10,7 +10,7 @@ from .chart_utils import filter_df
 def run(df: pd.DataFrame):
     X = df.columns
     Y = df.columns
-    group_columns = list(df.select_dtypes(include=["category", "object", "string"])) + [
+    group_columns = list(df.columns) + [
         None
     ]
 

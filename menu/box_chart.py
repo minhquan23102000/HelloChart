@@ -11,7 +11,7 @@ from .chart_utils import filter_df
 def run(df: pd.DataFrame):
     X = [None] + list(df.select_dtypes(include=["category", "object", "string"]))
     Y = list(df.select_dtypes(include=['int','float']))
-    group_columns = list(df.select_dtypes(include=["category", "object", "string"])) + [
+    group_columns = list(df.columns) + [
         None
     ]
 

@@ -11,7 +11,7 @@ def run(df: pd.DataFrame):
     X = df.columns
     Y = df.columns
     Z = list(df.select_dtypes(include=["int", "float"])) + [None]
-    group_columns = list(df.select_dtypes(include=["category", "object", "string"])) + [
+    group_columns = list(df.columns) + [
         None
     ]
 
